@@ -32,7 +32,16 @@ public class Mammal{
 }
 ```
 **Use the Adapter pattern to allow us to use the Mammal class with the Aquarium class above. Each animal is housed alone in its cage during its visit. All mammals are given the same medication, namely, "antibiotics".**
-
-
+```java
+public class MammalAdapter extends Fish {
+	private Mammal mammal;
+	public statis void feed(String food, int weight) {
+		return mammal.feed(food, weight, "antibiotics");
+	}
+	public static void clean(String cleaningProduct) {
+		return mammal.clean();
+	}
+}
+```
 
 # 5. What is the benefit of the Bridge design pattern? Why use one?
