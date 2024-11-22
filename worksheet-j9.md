@@ -2,10 +2,33 @@
 ## Niyati Shah
 
 # 1. What is the difference between a design pattern and a java library?
-
+A design pattern is a conceptual template or blueprint that developers use on how to implement some functionality, while a java library is downloaded code for existing functionality.
 
 # 2. Using the Singleton pattern, write code/pseudocode that ensures that only one database connection object is ever instantiated.
+```java
+public class DBSSingleton {
+	//this is a private member variable so that the file can only be accessed through the getInstance() method.
+	private static DBSSingleton file;
+	private static Connection connection;
 
+	//private constuctor forces the class to be instatiated via getInstance method.
+	private DBSSingleton() {
+		//private constructor
+		//set up the object here
+		connection = new Connection("username", "12345", "120.5.4.4");
+	}
+
+	//method to get an instance of this class.
+	public static DBSSingleton getInstance() {
+		//if this singleton instance is null, then constuct new instance.
+		//otherwise return the existing instance
+		if(connection == null) {
+			connection = new DBSSingleton();
+		}
+		return file;
+	}
+}
+```
 
 # 3. Assume there is an Animal abstract parent class that has the following constructor: public Animal(String name, int weight. Using the Factory pattern, write code/pseudocode that sets up a factory for two child classes of Animal: Bird and Mammal. Each of these has a constructor with the same arguments as those of the parent class.
 
