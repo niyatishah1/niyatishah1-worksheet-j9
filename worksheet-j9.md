@@ -80,3 +80,4 @@ public class MammalAdapter extends Fish {
 ```
 
 # 5. What is the benefit of the Bridge design pattern? Why use one?
+It allows for code reuse, has good OOP principles and has maintainable use.
