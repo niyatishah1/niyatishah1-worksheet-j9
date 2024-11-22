@@ -31,7 +31,19 @@ public class DBSSingleton {
 ```
 
 # 3. Assume there is an Animal abstract parent class that has the following constructor: public Animal(String name, int weight. Using the Factory pattern, write code/pseudocode that sets up a factory for two child classes of Animal: Bird and Mammal. Each of these has a constructor with the same arguments as those of the parent class.
-
+```java
+public class AnimalFactory {
+	public static Animal getAnimal(String option, String name, int weight) {
+	   switch(option) {
+	      case "mammal":
+		return new mammal(name, weight);
+	      case "bird":
+		return new bird(name, weight);
+	   }
+	   return null;
+	}
+}		
+```
 
 # 4. Imagine we have some code for an aquarium that works nicely to schedule feeding the fish in all the tanks, and cleaning the tanks:
 ```java
